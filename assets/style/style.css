@@ -23,8 +23,8 @@ body {
 	position: relative;
 }
 
-.wrapper_slider_content .top_content img {
-	max-height: 100vh;
+.wrapper_slider_content .top_content > img {
+	height: 100vh;
 }
 
 .wrapper_slider_content .top_content .text_box {
