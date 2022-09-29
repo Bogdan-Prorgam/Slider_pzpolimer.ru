@@ -144,6 +144,7 @@ body {
 }
 
 .wrapper_slider_content .top_content .text_box h1 {
+	line-height: 1;
 	font-size: calc(var(--index) * 3);
 	margin: 0;
 }
@@ -416,6 +417,10 @@ body {
 	.main_slider .swiper-pagination-custom,
 	.main_slider .swiper-pagination-fraction {
 		bottom: 36%;
+	}
+	.wrapper_slider_content .top_content .text_box h1{
+		margin: 0 10px;
+		font-size: calc(var(--index) * 1.5);
 	}
 	.main_slider .swiper-pagination-bullet-active .number_text{
 		font-size: 36px;
