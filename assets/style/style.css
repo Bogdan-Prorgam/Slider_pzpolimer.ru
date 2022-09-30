@@ -683,7 +683,7 @@ body {
 	}
 }
 
-@media (max-width: 320px) {
+@media (max-width: 330px) {
 	.wrapper_slider_content .top_content > img {
 		height: calc(40% - 20px);
 	}
