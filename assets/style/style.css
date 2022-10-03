@@ -112,6 +112,7 @@ body {
 }
 
 .logo_block img {
+	width: 48px;
 	margin-right: 20px;
 }
 
@@ -156,7 +157,7 @@ body {
 }
 
 .wrapper_slider_content .footer_content {
-	padding: 0 0 50px 50px;
+	padding: 0 0 20px 50px;
 }
 
 .wrapper_slider_content .footer_content .left_content h3 {
@@ -204,6 +205,7 @@ body {
 	bottom: 50%;
 	left: 0px;
 	width: 30px;
+	z-index: 1;
 }
 
 .swiper-pagination-bullet-active::after {
@@ -305,6 +307,54 @@ body {
 	color: #fff;
 }
 
+#title_slider #icon_info:after {
+	content: "-";
+	color: transparent;
+	background: url("../img/slider/snoska.png");
+	background-size: calc(var(--index) * 0.7);
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+
+.snoska #title_slider #icon_info:hover + #TPA_info {
+	display: block;
+}
+
+.wrapper_slider_content .top_content .text_box .snoska {
+	display: flex;
+	flex-wrap: nowrap;
+	position: relative;
+	flex-direction: column;
+}
+
+#TPA_info {
+	-webkit-box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.4);
+	z-index: 99;
+	font-weight: 400;
+	line-height: 1.3;
+	bottom: -210px;
+	right: 0;
+	margin: 0;
+	padding: 20px;
+	color: #000;
+	background: #fff;
+	display: none;
+	position: absolute;
+	font-size: 14px;
+	width: 280px;
+}
+
+#title_slider,
+#title_slider_down_array {
+	font-weight: bold;
+	font-size: calc(var(--index) * 3);
+	line-height: 1;
+	margin: 0;
+}
+
 .custom_bullet_des .swiper-pagination-bullet {
 	width: 10px;
 	height: 10px;
@@ -374,8 +424,114 @@ body {
 	right: 65px;
 }
 
-.wrapper_slider_content .top_content .mobile_image_slider{
+.wrapper_slider_content .top_content .mobile_image_slider {
 	display: none;
+}
+
+/* !МОДАЛЬНОЕ ОКНО! */
+
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 3;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.close {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	float: right;
+	font-size: 45px;
+	width: 43px;
+	height: 43px;
+	text-align: center;
+	font-weight: 100;
+	background-color: #0064b0;
+	transition: all ease 0.3s;
+}
+
+.request > .close {
+	margin: -40px -40px 0 0;
+}
+
+.request > h3 {
+	margin: 0;
+	text-align: center;
+	font-size: 34px;
+	font-weight: 700;
+}
+
+.request > .descriptions {
+	font-size: 18px;
+	text-align: center;
+}
+
+.request {
+	border: 10px solid rgba(1, 22, 59, 1);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	padding: 40px 40px 20px 40px;
+	transform: translate(-50%, -50%);
+	background: #f7f7f9;
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+	transition: all ease 0.3s;
+	-webkit-box-shadow: 0px -10px 19px 5px rgba(255, 255, 255, 0.5);
+	-moz-box-shadow: 0px -10px 19px 5px rgba(255, 255, 255, 0.5);
+	box-shadow: 0px -10px 19px 5px rgba(255, 255, 255, 0.5);
+}
+
+.request form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.input_request:focus-visible {
+	outline: none;
+}
+
+.input_request {
+	margin: 5px 0;
+	padding: 10px;
+	width: 270px;
+	height: 25px;
+	border: none;
+	font-size: 16px;
+	border: 1px solid #d7d7d7;
+}
+
+.send_request {
+	font-size: 14px;
+	padding: 10px;
+	width: 190px;
+	height: 45px;
+	border: none;
+	color: #fff;
+	background: #0064b0;
+	text-transform: uppercase;
+	margin: 10px 0;
+	cursor: pointer;
+}
+
+.few_desk,
+.few_desk > a {
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	text-align: center;
+	color: #727272;
 }
 
 /* !БУРГЕР МЕНЮ! */
@@ -412,7 +568,7 @@ body {
 .menu__btn {
 	display: none;
 	align-items: center;
-	position: fixed;
+	position: absolute;
 	top: 35px;
 	right: 20px;
 	width: 26px;
@@ -563,7 +719,12 @@ body {
 	.main_slider .swiper-pagination-fraction {
 		bottom: 36%;
 	}
-	.wrapper_slider_content .top_content .text_box h1 {
+	#TPA_info {
+		bottom: -220px;
+	}
+	.wrapper_slider_content .top_content .text_box h1,
+	#title_slider,
+	#title_slider_down_array {
 		margin: 0 10px;
 		font-size: calc(var(--index) * 1.5);
 	}
@@ -579,11 +740,17 @@ body {
 		font-size: 16px;
 		max-width: calc((var(--index) * 29) - 80px);
 	}
-	.logo_block img {
-		width: 50px;
-	}
 	.navigation_header a {
 		font-size: 14px;
+	}
+	#title_slider #icon_info:after {
+		content: "--";
+		color: transparent;
+		background: url("../img/slider/snoska.png");
+		background-size: calc(var(--index) * 0.5);
+		background-repeat: no-repeat;
+		background-position: center;
+		cursor: pointer;
 	}
 }
 
@@ -595,7 +762,6 @@ body {
 	.elips_slider,
 	.wrapper_slider_content .footer_content,
 	.number_text,
-	.swiper-pagination-bullet-active::after,
 	.wrapper_slider_content .top_content .image_slider_right {
 		display: none;
 	}
@@ -605,12 +771,23 @@ body {
 	.menu__btn {
 		display: flex;
 	}
+
+	#title_slider #icon_info:after {
+		content: "--";
+		color: transparent;
+		background: url("../img/slider/snoska.png");
+		background-size: 80%;
+		background-repeat: no-repeat;
+		background-position: center;
+		cursor: pointer;
+	}
+
 	.wrapper_slider_content,
 	.top_content {
 		height: 100vh;
 	}
 	.wrapper_slider_content .top_content .text_box {
-		height: 50%;
+		height: 40%;
 	}
 	.wrapper_slider_content .top_content .mobile_image_slider {
 		display: block;
@@ -649,20 +826,22 @@ body {
 		width: 100%;
 	}
 	.main_slider .swiper-pagination-bullet {
-		width: 10px;
+		/* width: 10px;
 		height: 10px;
 		opacity: 1;
-		background: #fff;
+		background: #fff; */
 		margin: 0 5px !important;
 	}
-	.main_slider .swiper-pagination-bullet-active {
+	/* .main_slider .swiper-pagination-bullet-active {
 		background: #3864ac;
 		width: 20px;
 		height: 20px;
 		border: none;
-	}
+	} */
 
-	.wrapper_slider_content .top_content .text_box .main_text h1 {
+	.wrapper_slider_content .top_content .text_box .main_text h1,
+	#title_slider,
+	#title_slider_down_array {
 		font-size: 26px;
 	}
 
@@ -672,6 +851,12 @@ body {
 }
 
 @media (max-width: 500px) {
+	#TPA_info {
+		right: 10px;
+	}
+	.main_text {
+		padding: 0 10px;
+	}
 	.navigation_block {
 		width: calc(100% - 20px);
 		right: 10px;
@@ -687,13 +872,94 @@ body {
 	.logo_block h2 {
 		font-size: 15px;
 	}
+	.logo_block img {
+		width: 37px;
+		margin-right: 12px;
+	}
+	.logo_block h2 {
+		margin: 0;
+		font-size: 12px;
+	}
+	.logo_block > div {
+		max-width: 270px;
+	}
+	.wrapper_slider_content .top_content .text_box .logo_block p {
+		margin: 5px 0 0 0;
+		font-size: 10px;
+	}
+	.wrapper_slider_content .top_content .text_box {
+		height: 40%;
+	}
+	.menu__btn,
+	.main_slider .swiper-slide .wrapper_slider_content .button_request_mobile {
+		top: 20px;
+	}
+	.menu__btn {
+		right: 10px;
+	}
+	.main_slider .swiper-slide .wrapper_slider_content .button_request_mobile {
+		right: 55px;
+	}
+}
+
+@media (max-width: 400px) {
+	.request {
+		width: 95%;
+	}
+	.request > h3 {
+		font-size: 30px;
+	}
+}
+
+@media (max-width: 375px) {
+	.wrapper_slider_content .top_content .text_box {
+		height: 47%;
+	}
 }
 
 @media (max-width: 330px) {
 	.wrapper_slider_content .top_content .mobile_image_slider {
 		height: calc(40% - 20px);
 	}
-	.main_slider .swiper-container-horizontal > .swiper-pagination-bullets, .main_slider .swiper-pagination-custom, .main_slider .swiper-pagination-fraction{
+	.main_slider .swiper-container-horizontal > .swiper-pagination-bullets,
+	.main_slider .swiper-pagination-custom,
+	.main_slider .swiper-pagination-fraction {
 		bottom: calc(40% - 35px);
+	}
+	.wrapper_slider_content .top_content .more_button {
+		font-size: 12px;
+		margin-top: 10px;
+	}
+	.wrapper_slider_content .top_content .text_box {
+		height: 57.5%;
+	}
+	.wrapper_slider_content .top_content .text_box .main_text h1,
+	#title_slider,
+	#title_slider_down_array {
+		font-size: 24px;
+	}
+	#TPA_info {
+		width: 235px;
+		right: 11px;
+		bottom: -260px;
+	}
+}
+
+@media (max-width: 320px) {
+	.wrapper_slider_content .top_content .text_box .main_text h1,
+	#title_slider,
+	#title_slider_down_array {
+		font-size: 20px;
+	}
+	.wrapper_slider_content .top_content .text_box p {
+		font-size: 14px;
+	}
+	.main_slider .swiper-container-horizontal > .swiper-pagination-bullets,
+	.main_slider .swiper-pagination-custom,
+	.main_slider .swiper-pagination-fraction {
+		bottom: calc(40% - 25px);
+	}
+	.wrapper_slider_content .top_content .more_button {
+		padding: 12px 20px;
 	}
 }
