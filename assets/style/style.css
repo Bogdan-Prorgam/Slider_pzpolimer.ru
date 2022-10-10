@@ -12,6 +12,10 @@ body {
 	font-family: "PF Highway Sans Pro", Arial, Helvetica, sans-serif;
 }
 
+body *{
+	font-family: "PF Highway Sans Pro", Arial, Helvetica, sans-serif !important;
+}
+
 .simple_flex {
 	display: flex;
 }
@@ -66,6 +70,9 @@ body {
 }
 
 .button_request {
+	text-transform: uppercase;
+    font-weight: 400;
+	font-size: 14px;
 	position: absolute;
 	background: #f9a01b;
 	border-radius: 2px;
@@ -128,6 +135,10 @@ body {
 .logo_block img {
 	width: 48px;
 	margin-right: 20px;
+}
+
+#logo_red{
+	width: 70px;
 }
 
 .logo_block > div {
@@ -299,6 +310,7 @@ body {
 }
 
 .slider_contact .contact_text p {
+	font-weight: 500;
 	font-size: 18px;
 	margin: 5px 0;
 }
@@ -376,12 +388,13 @@ body {
 
 .wrapper_slider_content .top_content .more_button {
 	padding: 15px 25px;
-	font-weight: 700;
+	font-weight: 500;
 	text-transform: uppercase;
 	border: 2px solid #fff;
 	background: none;
 	border-radius: 3px;
 	transition: all ease 0.6s;
+	font-size: 14px;
 	color: #fff;
 }
 
@@ -433,9 +446,18 @@ body {
 
 .main_slider .swiper-slide .wrapper_slider_content .button_request_mobile {
 	display: none;
-	padding: 7px 7px 4px 7px;
+	padding: 6px 7px 4px 7px;
 	top: 35px;
-	right: 65px;
+	right: 15px;
+}
+
+.hamburger-menu .menu__box .button_request_mobile {
+	display: block;
+	position: absolute;
+	padding: 6px 7px 4px 7px;
+	top: 35px;
+	right: 15px;
+	top: -68.5px;
 }
 
 .wrapper_slider_content .top_content .mobile_image_slider {
@@ -562,6 +584,7 @@ body {
 /* !БУРГЕР МЕНЮ! */
 
 .menu__box h4 {
+	text-transform: uppercase;
 	color: #2e2f30;
 	font-size: 20px;
 	margin: 0;
@@ -633,12 +656,24 @@ body {
 	opacity: 1;
 }
 
+.menu__box .logo_mobile{
+	position: absolute;
+	top: -75px;
+}
+
+.menu__box .logo_mobile h1 {
+	max-width: 170px;
+	margin-left: 15px;
+	font-size: 14px;
+	color: #fff;
+}
+
 .menu__btn {
-	display: flex;
+	display: none;
 	align-items: center;
 	position: absolute;
 	top: 35px;
-	right: 15px;
+	right: 65px;
 	width: 26px;
 	height: 26px;
 	cursor: pointer;
@@ -688,7 +723,7 @@ body {
 	height: fit-content;
 	margin: 0;
 	padding: 25px 10px;
-	background-color: #eceff1;
+	background-color: #f8f7f7;
 	box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
 	transition-duration: 0.25s;
 	border-top: 88px solid var(--blue-color);
@@ -701,6 +736,7 @@ body {
 }
 
 .menu__box .level_2__contact p > b {
+	color: #2e2f30;
 	font-size: 18px;
 }
 
@@ -719,7 +755,7 @@ body {
 	display: block;
 	padding: 10px 0px;
 	border-bottom: 1px dashed #e4e4e4;
-	color: #333;
+	color: #5d5d5e;
 	font-size: 15px;
 	font-weight: 400;
 	text-decoration: none;
@@ -999,18 +1035,18 @@ body {
 		font-size: 10px;
 	}
 	.wrapper_slider_content .top_content .text_box {
-		height: 40%;
+		height: 50%;
 	}
 	.menu__btn,
 	.main_slider .swiper-slide .wrapper_slider_content .button_request_mobile {
 		top: 20px;
 	}
-	.menu__btn {
+	/* .menu__btn {
 		right: 10px;
 	}
 	.main_slider .swiper-slide .wrapper_slider_content .button_request_mobile {
 		right: 55px;
-	}
+	} */
 }
 
 @media (max-width: 400px) {
