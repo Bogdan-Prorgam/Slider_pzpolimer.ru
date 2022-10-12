@@ -823,6 +823,12 @@ body *{
 	}
 }
 
+@media (max-width: 1370px) {
+	.wrapper_slider_content .footer_content .left_content h3{
+		max-width: 230px;
+	}
+}
+
 @media (max-width: 1280px) {
 	.logo_block {
 		padding-left: 10px;
@@ -918,7 +924,12 @@ body *{
 	.menu__btn {
 		display: flex;
 	}
-
+	.menu__box{
+		border-top: 102px solid var(--blue-color);
+	}
+	.atim_title{
+		max-width: calc(100vw - 200px) !important;
+	}
 	#title_slider #icon_info:after {
 		content: "--";
 		color: transparent;
@@ -997,10 +1008,22 @@ body *{
 	}
 }
 
+@media (max-width: 600px) {
+	.logo_block img{
+		width: 43px;
+	}
+	#logo_red{
+		width: 46px;
+	}
+}
+
 @media (max-width: 500px) {
 	#TPA_info {
 		right: 10px;
 	}
+	.menu__box{
+		border-top: 88px solid var(--blue-color);
+	} 
 	.main_text {
 		padding: 0 10px;
 	}
@@ -1111,5 +1134,18 @@ body *{
 	}
 	.wrapper_slider_content .top_content .more_button {
 		padding: 12px 20px;
+	}
+	.atim_title{
+		max-width: 120px !important;
+	}
+}
+
+
+@media (min-width: 1500px) and (max-height: 800px) {
+	#title_slider, #title_slider_down_array{
+		font-size: calc(var(--index) * 2.7);
+	}
+	.wrapper_slider_content .top_content .text_box p{
+		font-size: 16px;
 	}
 }
