@@ -59,3 +59,9 @@ if (window.innerWidth < 1000) {
 	document.querySelectorAll(".swiper-slide")[2].style.backgroundImage =
 		"linear-gradient(rgba(196, 7, 7, 0.6), rgba(196, 7, 7, 0.6)), url('./assets/img/slider/img_bg_3.png')";
 }
+
+window.addEventListener('resize', () => {
+	// We execute the same script as before
+	let vh = window.innerHeight * 0.01;
+	document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
