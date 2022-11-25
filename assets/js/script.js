@@ -60,8 +60,15 @@ if (window.innerWidth < 1000) {
 		"linear-gradient(rgba(196, 7, 7, 0.6), rgba(196, 7, 7, 0.6)), url('./assets/img/slider/img_bg_3.png')";
 }
 
-window.addEventListener('resize', () => {
-	// We execute the same script as before
-	let vh = window.innerHeight * 0.01;
-	document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
+// window.addEventListener('resize', () => {
+// 	// We execute the same script as before
+// 	let vh = window.innerHeight * 0.01;
+// 	document.documentElement.style.setProperty('--vh', `${vh}px`);
+// });
+
+const appHeight = () => {
+    const doc = document.documentElement
+    doc.style.setProperty('--app-height', '${window.innerHeight}px')
+}
+window.addEventListener('resize', appHeight)
+appHeight()
