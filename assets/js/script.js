@@ -75,17 +75,20 @@ if (window.innerWidth < 1000) {
 function resetHeight(){
     // reset the body height to that of the inner browser
     document.body.style.height = window.innerHeight + "px";
-	document.querySelectorAll(".wrapper_slider_content .top_content .image_slider_right").style.height = window.innerHeight + "px";
-	document.querySelectorAll(".wrapper_slider_content .left_block_bg").style.height = window.innerHeight + "px";
-	document.querySelectorAll(".top_content").style.height = window.innerHeight + "px";
-	document.querySelectorAll(".wrapper_slider_content").style.height = window.innerHeight + "px";
+	let array = document.querySelectorAll(".swiper-wrapper .swiper-slide")
+	for (var i = 0; i < array.length; i++) {
+		array[i].querySelector(".wrapper_slider_content .top_content .image_slider_right").style.height = window.innerHeight + "px";
+		array[i].querySelector(".wrapper_slider_content .left_block_bg").style.height = window.innerHeight + "px";
+		array[i].querySelector(".top_content").style.height = window.innerHeight + "px";
+		array[i].querySelector(".wrapper_slider_content").style.height = window.innerHeight + "px";
+	}
+	// document.querySelector(".wrapper_slider_content .top_content .image_slider_right").style.height = window.innerHeight + "px";
+	// document.querySelector(".wrapper_slider_content .left_block_bg").style.height = window.innerHeight + "px";
+	// document.querySelector(".top_content").style.height = window.innerHeight + "px";
+	// document.querySelector(".wrapper_slider_content").style.height = window.innerHeight + "px";
 	// document.querySelector("").style.height = window.innerHeight + "px";
 }
 // reset the height whenever the window's resized
 window.addEventListener("resize", resetHeight);
 // called to initially set the height.
 resetHeight();
-
-$(".swiper-button-next").click(function(){ 
-	
-})
