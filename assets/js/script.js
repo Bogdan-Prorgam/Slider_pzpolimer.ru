@@ -72,3 +72,16 @@ if (window.innerWidth < 1000) {
 // }
 // window.addEventListener('resize', appHeight)
 // appHeight()
+function resetHeight(){
+    // reset the body height to that of the inner browser
+    document.body.style.height = window.innerHeight + "px";
+	document.querySelector(".wrapper_slider_content .top_content .image_slider_right").style.height = window.innerHeight + "px";
+	document.querySelector(".wrapper_slider_content .left_block_bg").style.height = window.innerHeight + "px";
+	document.querySelector(".top_content").style.height = window.innerHeight + "px";
+	document.querySelector(".wrapper_slider_content").style.height = window.innerHeight + "px";
+	// document.querySelector("").style.height = window.innerHeight + "px";
+}
+// reset the height whenever the window's resized
+window.addEventListener("resize", resetHeight);
+// called to initially set the height.
+resetHeight();
